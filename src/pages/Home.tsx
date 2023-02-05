@@ -9,12 +9,16 @@ export const Home = () => {
 
   const [categoriesList, setCategoriesList] = useState<Category[]>(categories);
 
+  const handleDrop = (categoryId: number, itemId: number) => {
+    console.log("category drop id", categoryId);
+  };
+
   return (
     <MainContainer>
       <h1>Tasks</h1>
       <Container>
         {categoriesList.map((category) => (
-          <Categories category={category} />
+          <Categories category={category} handleDrop={handleDrop} />
         ))}
       </Container>
     </MainContainer>

@@ -7,7 +7,7 @@ export const Tasks = ({ task }: { task: Task }) => {
   const [displayDescription, setDisplayDescription] = useState<Boolean>(false);
 
   return (
-    <Container>
+    <Container draggable onDragStart={() => console.log("dragging")}>
       <TaskContainer>
         <b>{task.name}</b>{" "}
         <IconsContainer>

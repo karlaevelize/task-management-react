@@ -3,15 +3,29 @@ import styled from "styled-components";
 import { Category } from "../types/types";
 import { Tasks } from "./Tasks";
 
-export const Categories = ({ category }: { category: Category }) => {
-  const { name, tasks } = category;
-
-  const [displayTasks, setDisplayTasks] = useState<Boolean>(true);
+export const Categories = ({
+  category,
+  handleDrop,
+}: {
+  category: Category;
+  handleDrop: (categoryId: number, itemId: number) => void;
+}) => {
+  const { name, tasks, id } = category;
 
   return (
-    <Container>
+    <Container
+      onDragEnter={() => {
+        console.log(name, id);
+        handleDrop(id, 1);
+      }}
+      onDragEnd={() => console.log("ended", name)}
+    >
       <p>{name}</p>
-      <div>{displayTasks && tasks.map((task) => <Tasks task={task} />)}</div>
+      <div>
+        {tasks.map((task) => (
+          <Tasks task={task} />
+        ))}
+      </div>
     </Container>
   );
 };
