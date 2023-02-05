@@ -2,6 +2,7 @@ type Task = {
   id: number;
   name: string;
   category_id: number;
+  description: string;
 };
 
 type Category = {
@@ -10,4 +11,4 @@ type Category = {
   tasks: Task[];
 };
 
-export type { Category };
+export type { Task, Category };
