@@ -1,17 +1,6 @@
 import data from "../data/data.json";
 import { useState } from "react";
-
-type Task = {
-  id: number;
-  name: string;
-  category_id: number;
-};
-
-type Category = {
-  id: number;
-  name: string;
-  tasks: Task[];
-};
+import { Category } from "../types/types";
 
 export const Tasks = () => {
   const { categories } = data;
