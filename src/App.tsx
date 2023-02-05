@@ -1,9 +1,13 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import { Tasks } from "./pages";
 
 const App = () => {
-  return <div className="App">App</div>;
+  return (
+    <>
+      App
+      <Tasks />
+    </>
+  );
 };
 
 export default App;

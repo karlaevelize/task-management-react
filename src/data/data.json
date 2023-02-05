@@ -1,0 +1,36 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Household",
+      "tasks": [
+        {
+          "id": 1,
+          "name": "Grocery Shopping",
+          "category_id": 1
+        },
+        {
+          "id": 2,
+          "name": "Laundry",
+          "category_id": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Work",
+      "tasks": [
+        {
+          "id": 3,
+          "name": "Meet with client",
+          "category_id": 2
+        },
+        {
+          "id": 4,
+          "name": "Prepare presentation",
+          "category_id": 2
+        }
+      ]
+    }
+  ]
+}
