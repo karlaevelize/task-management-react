@@ -17,8 +17,9 @@ const Container = styled.div`
   background-color: black;
   color: white;
   height: 100vh;
-  width: 40px
-  position: fixed;
+  width: 40px;
+  position: sticky;
   top: 0;
   left: 0;
+  /* margin-right: 100px; */
 `;
