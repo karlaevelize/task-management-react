@@ -26,8 +26,8 @@ export const Tasks = ({ task }: { task: Task }) => {
 };
 
 const Container = styled.div`
-  background-color: white;
-  border-left: 2px solid green;
+  background-color: #ececec;
+  /* border-left: 2px solid green; */
   border-radius: 7px;
   margin-bottom: 3%;
   padding: 2%;

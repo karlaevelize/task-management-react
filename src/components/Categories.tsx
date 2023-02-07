@@ -20,7 +20,9 @@ export const Categories = ({
       }}
       onDragEnd={() => console.log("ended", name)}
     >
-      <p>{name}</p>
+      <p style={{ color: "#212427", marginLeft: "3px" }}>
+        <b>{name.toLocaleUpperCase()}</b>
+      </p>
       <div>
         {tasks.map((task) => (
           <Tasks task={task} />
@@ -34,7 +36,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #f5f5f5;
-  border-left: 1px solid #e0e0e0;
+  border-left: 2px solid green;
+  color: #616161;
   border-radius: 14px;
   padding: 1%;
   margin: 0.5%;

@@ -15,7 +15,7 @@ export const Home = () => {
 
   return (
     <MainContainer>
-      <h1>Tasks</h1>
+      <h1 style={{ color: "#1B1A3A" }}>Tasks</h1>
       <Container>
         {categoriesList.map((category) => (
           <Categories category={category} handleDrop={handleDrop} />
