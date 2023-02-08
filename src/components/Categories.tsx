@@ -10,10 +10,11 @@ export const Categories = ({
   category: Category;
   handleDrop: (categoryId: number, itemId: number) => void;
 }) => {
-  const { name, tasks, id } = category;
+  const { name, tasks, id, color } = category;
 
   return (
     <Container
+      style={{ borderLeft: `2px solid ${color}` }}
       onDragEnter={() => {
         console.log(name, id);
         handleDrop(id, 1);
@@ -36,7 +37,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #f5f5f5;
-  border-left: 2px solid green;
+  /* border-left: 2px solid green; */
   color: #616161;
   border-radius: 14px;
   padding: 1%;

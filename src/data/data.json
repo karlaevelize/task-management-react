@@ -2,90 +2,60 @@
   "categories": [
     {
       "id": 1,
-      "name": "Household",
+      "name": "To do",
+      "color": "red",
+      "order": 1,
       "tasks": [
         {
           "id": 1,
           "name": "Grocery Shopping",
-          "category_id": 1,
+          "list_id": 1,
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras odio nulla, pharetra quis mi eu, pretium congue libero."
         },
         {
           "id": 2,
           "name": "Laundry",
-          "category_id": 1,
+          "list_id": 1,
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras odio nulla, pharetra quis mi eu, pretium congue libero."
         }
       ]
     },
     {
       "id": 2,
-      "name": "Work",
+      "name": "In Progress",
+      "color": "#f2cf07",
+      "order": 2,
       "tasks": [
         {
           "id": 3,
           "name": "Meet with client",
-          "category_id": 2,
+          "list_id": 2,
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras odio nulla, pharetra quis mi eu, pretium congue libero."
         },
         {
           "id": 4,
           "name": "Prepare presentation",
-          "category_id": 2,
+          "list_id": 2,
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras odio nulla, pharetra quis mi eu, pretium congue libero."
         }
       ]
     },
     {
       "id": 3,
-      "name": "Household",
+      "name": "Finished",
+      "color": "green",
+      "order": 3,
       "tasks": [
         {
           "id": 5,
           "name": "Grocery Shopping",
-          "category_id": 1,
+          "list_id": 1,
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras odio nulla, pharetra quis mi eu, pretium congue libero."
         },
         {
           "id": 6,
           "name": "Laundry",
-          "category_id": 1,
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras odio nulla, pharetra quis mi eu, pretium congue libero."
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "name": "Work",
-      "tasks": [
-        {
-          "id": 7,
-          "name": "Meet with client",
-          "category_id": 2,
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras odio nulla, pharetra quis mi eu, pretium congue libero."
-        },
-        {
-          "id": 8,
-          "name": "Prepare presentation",
-          "category_id": 2,
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras odio nulla, pharetra quis mi eu, pretium congue libero."
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "name": "Work",
-      "tasks": [
-        {
-          "id": 9,
-          "name": "Meet with client",
-          "category_id": 2,
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras odio nulla, pharetra quis mi eu, pretium congue libero."
-        },
-        {
-          "id": 10,
-          "name": "Prepare presentation",
-          "category_id": 2,
+          "list_id": 1,
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras odio nulla, pharetra quis mi eu, pretium congue libero."
         }
       ]
