@@ -10,7 +10,7 @@ export const Categories = ({
   category: Category;
   handleDrop: (categoryId: number, itemId: number) => void;
 }) => {
-  const { name, tasks, id, color } = category;
+  const { name, items, id, color } = category;
 
   return (
     <Container
@@ -25,8 +25,8 @@ export const Categories = ({
         <b>{name.toLocaleUpperCase()}</b>
       </p>
       <div>
-        {tasks.map((task) => (
-          <Tasks task={task} />
+        {items.map((item) => (
+          <Tasks key={item.id} task={item} />
         ))}
       </div>
     </Container>

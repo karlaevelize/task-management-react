@@ -1,25 +1,42 @@
 import data from "../data/data.json";
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { Category } from "../types/types";
 import { Categories } from "../components";
+import { API_URL } from "../config/constants";
 
 export const Home = () => {
-  const { categories } = data;
-
-  const [categoriesList, setCategoriesList] = useState<Category[]>(categories);
+  const [categoriesList, setCategoriesList] = useState<Category[] | null>(null);
 
   const handleDrop = (categoryId: number, itemId: number) => {
     console.log("category drop id", categoryId);
   };
 
+  const getCategories = async () => {
+    const response = await axios.get(`${API_URL}/lists`);
+    setCategoriesList(response.data);
+  };
+
+  useEffect(() => {
+    getCategories();
+  }, []);
+
   return (
     <MainContainer>
       <h1 style={{ color: "#1B1A3A" }}>Tasks</h1>
       <Container>
-        {categoriesList.map((category) => (
-          <Categories category={category} handleDrop={handleDrop} />
-        ))}
+        {!categoriesList
+          ? "Loading"
+          : categoriesList
+              .sort((a, b) => a.order - b.order)
+              .map((category) => (
+                <Categories
+                  key={category.id}
+                  category={category}
+                  handleDrop={handleDrop}
+                />
+              ))}
       </Container>
     </MainContainer>
   );

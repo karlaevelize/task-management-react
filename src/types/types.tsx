@@ -9,7 +9,8 @@ type Category = {
   id: number;
   name: string;
   color: string;
-  tasks: Task[];
+  order: number;
+  items: Task[];
 };
 
 export type { Task, Category };
