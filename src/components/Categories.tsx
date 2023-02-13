@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { Category } from "../types/types";
+import { Category, CategoryPick } from "../types/types";
 import { Tasks } from "./Tasks";
 
 export const Categories = ({
@@ -8,26 +8,24 @@ export const Categories = ({
   handleDrop,
 }: {
   category: Category;
-  handleDrop: (categoryId: number, itemId: number) => void;
+  handleDrop?: (categoryId: number, itemId: number) => void;
 }) => {
   const { name, items, id, color } = category;
 
   return (
     <Container
       style={{ borderLeft: `2px solid ${color}` }}
-      onDragEnter={() => {
-        console.log(name, id);
-        handleDrop(id, 1);
-      }}
-      onDragEnd={() => console.log("ended", name)}
+      // onDragEnter={() => {
+      //   console.log(name, id);
+      //   handleDrop(id, 1);
+      // }}
+      // onDragEnd={() => console.log("ended", name)}
     >
       <p style={{ color: "#212427", marginLeft: "3px" }}>
         <b>{name.toLocaleUpperCase()}</b>
       </p>
       <div>
-        {items.map((item) => (
-          <Tasks key={item.id} task={item} />
-        ))}
+        {items && items.map((item) => <Tasks key={item.id} task={item} />)}
       </div>
     </Container>
   );

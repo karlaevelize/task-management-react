@@ -13,4 +13,8 @@ type Category = {
   items: Task[];
 };
 
-export type { Task, Category };
+type CategoryPick = Pick<Category, "name" | "color">;
+
+type TaskPick = Pick<Task, "name" | "description">;
+
+export type { Task, Category, CategoryPick, TaskPick };

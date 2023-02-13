@@ -1,13 +1,16 @@
-import data from "../data/data.json";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Category } from "../types/types";
-import { Categories } from "../components";
+import { Categories, EditableCategory } from "../components";
 import { API_URL } from "../config/constants";
 
-export const Home = () => {
+export const Home = ({ displayCard }: { displayCard: Boolean }) => {
   const [categoriesList, setCategoriesList] = useState<Category[] | null>(null);
+  // const [editableCard, setEditableCard] = useState<CategoryPick>({
+  //   name: "Edit name",
+  //   color: "green",
+  // });
 
   const handleDrop = (categoryId: number, itemId: number) => {
     console.log("category drop id", categoryId);
@@ -26,6 +29,7 @@ export const Home = () => {
     <MainContainer>
       <h1 style={{ color: "#1B1A3A" }}>Tasks</h1>
       <Container>
+        {displayCard && <EditableCategory />}
         {!categoriesList
           ? "Loading"
           : categoriesList

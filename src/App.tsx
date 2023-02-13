@@ -1,13 +1,16 @@
 import "./App.css";
 import styled from "styled-components";
 import { Home } from "./pages";
-import { SideBar, TopBar } from "./components";
+import { SideBar } from "./components";
+import { useState } from "react";
 
 const App = () => {
+  const [displayCard, setDisplayCard] = useState<Boolean>(true);
+
   return (
     <AppContainer>
-      <SideBar />
-      <Home />
+      <SideBar setDisplayCard={setDisplayCard} displayCard={displayCard} />
+      <Home displayCard={displayCard} />
     </AppContainer>
   );
 };
