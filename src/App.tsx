@@ -5,7 +5,7 @@ import { SideBar } from "./components";
 import { useState } from "react";
 
 const App = () => {
-  const [displayCard, setDisplayCard] = useState<Boolean>(true);
+  const [displayCard, setDisplayCard] = useState<Boolean>(false);
 
   return (
     <AppContainer>

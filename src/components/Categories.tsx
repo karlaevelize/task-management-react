@@ -2,15 +2,19 @@ import { useState } from "react";
 import styled from "styled-components";
 import { Category, CategoryPick } from "../types/types";
 import { Tasks } from "./Tasks";
+import { BsTrash } from "react-icons/bs";
 
 export const Categories = ({
   category,
   handleDrop,
+  deleteCategory,
 }: {
   category: Category;
   handleDrop?: (categoryId: number, itemId: number) => void;
+  deleteCategory: (id: number) => void;
 }) => {
   const { name, items, id, color } = category;
+  // console.log("category", category);
 
   return (
     <Container
@@ -21,9 +25,17 @@ export const Categories = ({
       // }}
       // onDragEnd={() => console.log("ended", name)}
     >
-      <p style={{ color: "#212427", marginLeft: "3px" }}>
-        <b>{name.toLocaleUpperCase()}</b>
-      </p>
+      <TitleContainer>
+        <TitleItem>
+          <b>{name.toLocaleUpperCase()}</b>
+        </TitleItem>
+        <TitleItem
+          onClick={() => deleteCategory(id)}
+          style={{ cursor: "pointer" }}
+        >
+          <BsTrash />
+        </TitleItem>
+      </TitleContainer>
       <div>
         {items && items.map((item) => <Tasks key={item.id} task={item} />)}
       </div>
@@ -46,4 +58,14 @@ const Container = styled.div`
     min-width: 350px;
     height: 85vh;
   }
+`;
+
+const TitleContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const TitleItem = styled.p`
+  color: #212427;
+  margin-right: 3px;
 `;

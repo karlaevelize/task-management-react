@@ -21,6 +21,12 @@ export const Home = ({ displayCard }: { displayCard: Boolean }) => {
     setCategoriesList(response.data);
   };
 
+  const deleteCategory = async (id: number) => {
+    console.log("id", id);
+    await axios.delete(`${API_URL}/lists?list_id=${id}`);
+    getCategories();
+  };
+
   useEffect(() => {
     getCategories();
   }, []);
@@ -39,6 +45,7 @@ export const Home = ({ displayCard }: { displayCard: Boolean }) => {
                   key={category.id}
                   category={category}
                   handleDrop={handleDrop}
+                  deleteCategory={deleteCategory}
                 />
               ))}
       </Container>
